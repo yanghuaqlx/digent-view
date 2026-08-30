@@ -1,0 +1,9 @@
+{
+	"id": "digent-view",
+	"name": "Digent View",
+	"version": "0.1.0",
+	"minAppVersion": "1.8.7",
+	"description": "Minimal 3D graph view of your vault — Digent View.",
+	"author": "Rick",
+	"isDesktopOnly": false
+}
