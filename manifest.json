@@ -3,7 +3,7 @@
 	"name": "Digent View",
 	"version": "0.1.0",
 	"minAppVersion": "1.8.7",
-	"description": "Minimal 3D graph view of your vault — Digent View.",
-	"author": "yanghua",
+	"description": "Visualize your vault as a 3D brain — every note a neuron, every link a synapse.",
+	"author": "Rick",
 	"isDesktopOnly": false
 }
