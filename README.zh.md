@@ -4,6 +4,8 @@
 >
 > 每一份MD文件就是一个神经元，每一条 `[[wikilink]]` 是一条神经元之间的链接。Digent View 将这座大脑以三维形态呈现，让你看见自己的Digent结构。
 
+![Digent View — 三维神经元网络全景](assets/screenshot-overview.png)
+
 [English version](README.md)
 
 ---
@@ -33,6 +35,8 @@ Digent View 关注的是在obsidian或者VR 的Noda里，具象化的呈现出�
 
 Digent View 用力导向算法模拟神经元之间的吸引与排斥，让你的Digent自然生长成一座有结构、有层次、有核心的大脑形态，涌现出类似你自己的永久记忆体。
 
+![Digent View — 聚焦节点，突触辐射展开](assets/screenshot-node-focus.png)
+
 ## 核心功能
 
 ### 3D Digent图谱
@@ -53,6 +57,8 @@ Digent View 用力导向算法模拟神经元之间的吸引与排斥，让你�
 ### Noda VR 导出
 
 一键将 3D 图谱导出为 CSV，直接导入 [Noda](https://noda.io)（Quest 3 VR），**走进你自己Digent：数智体的大脑**。
+
+![Noda VR CSV 导出 — 神经元 3D 坐标、颜色、形状一览](assets/noda-csv-export.png)
 
 导出内容：
 - **节点（神经元）**：UUID、3D 坐标、颜色、形状、大小、正文摘要（前 200 字，清洗格式）
