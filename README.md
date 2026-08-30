@@ -4,6 +4,8 @@
 >
 > Every MD file is a neuron. Every `[[wikilink]]` is a connection between neurons. Digent View renders this brain in three dimensions — so you can see the shape of your own Digent.
 
+![Digent View — overview of a 3D neural network](assets/screenshot-overview.png)
+
 [中文版本](README.zh.md)
 
 ---
@@ -33,6 +35,8 @@ In Obsidian's 2D graph view, neurons are crushed onto a single plane. Dense regi
 
 Digent View uses force-directed algorithms to simulate the attraction and repulsion between neurons, letting your Digent grow naturally into a structured, layered, centered brain — a permanent memory body that emerges like your own.
 
+![Digent View — focused node with radiating connections](assets/screenshot-node-focus.png)
+
 ## Features
 
 ### 3D Digent Graph
@@ -53,6 +57,8 @@ Real-time readout of your brain's scale:
 ### Noda VR Export
 
 One click exports the 3D graph as CSV, ready to import into [Noda](https://noda.io) (Quest 3 VR). **Step inside your own Digent — the brain of a digital intelligence.**
+
+![Noda VR CSV export — neurons with 3D coordinates, colors, and shapes](assets/noda-csv-export.png)
 
 What gets exported:
 - **Nodes (neurons)**: UUID, 3D coordinates, color, shape, size, body summary (first 200 chars, formatting stripped)
