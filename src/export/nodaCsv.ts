@@ -1,7 +1,7 @@
 import type { GraphNode } from '../types';
 
 const SHAPES: string[] = ['Ball', 'Box', 'Tetra', 'Cylinder', 'Diamond', 'Hourglass', 'Plus', 'Star'];
-const GALAXY_SCALE = 1 / 20;
+const GALAXY_SCALE = 1 / 100;
 
 function folderLabel(folder: string): string {
 	if (folder === '') return 'Root';
@@ -11,8 +11,8 @@ function folderLabel(folder: string): string {
 }
 
 function computeNodeSize(degree: number): number {
-	const raw = 2.2 * (1 + 0.5 * Math.sqrt(Math.max(degree, 0)));
-	return Math.max(1, Math.min(20, Math.round(raw)));
+	const raw = 5 * (1 + 0.5 * Math.sqrt(Math.max(degree, 0)));
+	return Math.max(5, Math.min(45, Math.round(raw)));
 }
 
 function csvField(value: string): string {
