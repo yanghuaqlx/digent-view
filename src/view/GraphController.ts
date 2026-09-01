@@ -99,7 +99,7 @@ export class GraphController {
 	private autoLow = false; // auto 档当前是否降到 low（可双向）
 	private lowFpsChecks = 0;
 	private highFpsChecks = 0;
-	private _vaultCounts: { nodes: number; links: number; words: number } = { nodes: 0, links: 0, words: 0 };
+	private _vaultCounts: { nodes: number; links: number; words: number; synapses: number } = { nodes: 0, links: 0, words: 0, synapses: 0 };
 	private _refreshingCounts = false;
 	private lastWatchdogAt = 0;
 	private disposed = false;
@@ -124,13 +124,13 @@ export class GraphController {
 		);
 	}
 
-	get counts(): { nodes: number; links: number; words: number } {
+	get counts(): { nodes: number; links: number; words: number; synapses: number } {
 		if (this._vaultCounts.nodes > 0) return this._vaultCounts;
 		let real = 0, bytes = 0;
 		for (const n of this.store.data.nodes) {
 			if (!n.unresolved && !n.tag) { real++; bytes += n.fileSize; }
 		}
-		return { nodes: real, links: this.store.data.links.length, words: Math.round(bytes / 3) };
+		return { nodes: real, links: this.store.data.links.length, words: Math.round(bytes / 3), synapses: Math.max(0, this.store.data.nodes.length - real) };
 	}
 
 	private async refreshVaultCounts(): Promise<void> {
@@ -150,7 +150,9 @@ export class GraphController {
 				const contents = await Promise.all(batch.map((f) => this.app.vault.cachedRead(f)));
 				for (const c of contents) chars += countWords(c);
 			}
-			this._vaultCounts = { nodes: files.length, links, words: chars };
+			const totalGraphNodes = this.store.data.nodes.length;
+			const synapses = Math.max(0, totalGraphNodes - files.length);
+			this._vaultCounts = { nodes: files.length, links, words: chars, synapses };
 		} finally {
 			this._refreshingCounts = false;
 		}
@@ -1229,7 +1231,7 @@ export class GraphController {
 		if (now % 500 > 250) return;
 		const c = this.counts;
 		const fmt = new Intl.NumberFormat(getLang(), { notation: 'compact' });
-		this.panel?.statsEl?.setText(`${t('stat.notes')} ${fmt.format(c.nodes)} · ${t('stat.links')} ${fmt.format(c.links)} · ${t('stat.words')} ${fmt.format(c.words)}`);
+		this.panel?.statsEl?.setText(`${t('stat.notes')} ${fmt.format(c.nodes)} · ${t('stat.synapses')} ${fmt.format(c.synapses)} · ${t('stat.links')} ${fmt.format(c.links)} · ${t('stat.words')} ${fmt.format(c.words)}`);
 		this.panel?.advStatsEl?.setText(
 			`${this.hudFrames.length} fps · ${this.renderer?.drawCalls ?? 0} calls · ${c.nodes}n/${c.links}l · ` +
 				`${this.layout.isSettled() ? t('hud.settled') : t('hud.layouting')}`,
