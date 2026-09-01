@@ -144,8 +144,8 @@ export const ZH: Dict = {
 	'hud.layouting': '布局中',
 	'hud.notes': '{n} 笔记',
 	'stat.notes': '神经元',
-	'stat.synapses': '突触',
-	'stat.links': '链接',
+	'stat.synapses': '空突触类',
+	'stat.links': '突触链接',
 	'stat.words': '字数',
 	// —— help lines ——
 	'help.orbit': '左键拖 = 环绕 · 滚轮 = 缩放',
