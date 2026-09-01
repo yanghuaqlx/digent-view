@@ -98,7 +98,7 @@ export function generateNodaCsv(input: NodaExportInput): string {
 		if (!n) continue;
 		const st = folderStyles.get(n.folderTop) ?? { color: '888888', shape: 'Ball' };
 		const x = safeNum(positions[i * 3] ?? 0) * GALAXY_SCALE;
-		const y = safeNum(positions[i * 3 + 1] ?? 0) * GALAXY_SCALE;
+		const y = safeNum(positions[i * 3 + 1] ?? 0) * GALAXY_SCALE + 50;
 		const z = safeNum(positions[i * 3 + 2] ?? 0) * GALAXY_SCALE;
 		rows.push([
 			nodeUuids[i] ?? '', n.name,
