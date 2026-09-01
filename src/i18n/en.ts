@@ -144,7 +144,8 @@ export const EN = {
 	'hud.settled': 'settled',
 	'hud.layouting': 'layout…',
 	'hud.notes': '{n} notes',
-	'stat.notes': 'Notes',
+	'stat.notes': 'Neurons',
+	'stat.synapses': 'Synapses',
 	'stat.links': 'Links',
 	'stat.words': 'Words',
 	// —— help lines ——
