@@ -88,7 +88,7 @@ export function generateNodaCsv(input: NodaExportInput): string {
 		rows.push([
 			uuid(), folderLabel(folder), '', '', '',
 			st.color, '1', st.shape, '5',
-			'0', '2', '0.11',
+			'0', '52', '0.11',
 			'No', 'Type', '', '',
 		]);
 	}
