@@ -49,10 +49,45 @@ Digent View uses force-directed algorithms to simulate the attraction and repuls
 
 ### Stats Panel
 
-Real-time readout of your brain's scale:
-- **Note count** — how many neurons you have
-- **Link count** — how many neural connections
-- **Word count** — total volume of your cognitive corpus
+Real-time readout of your Digent brain's scale:
+- **Neurons** — total `.md` files, i.e., synapse types with a cell body (solid synapse types)
+- **Void Synapse Types** — link categories referenced by multiple synapses but without a dedicated neuron
+- **Synaptic Links** — total `[[wikilink]]` occurrences, including connections to existing neurons and to void synapse types
+- **Words** — total effective word count across all neurons, i.e., the cognitive corpus of your Digent brain
+
+#### Metric Definitions
+
+**Neurons**
+
+The total count of all `.md` files in the Obsidian vault. Each file is an information-processing unit with its own cell body (content), synapses (links), and metadata. A neuron is a solid synapse type — a synapse category with a name, connections, and a cell body.
+
+Data logic: `app.vault.getMarkdownFiles().length` — calls the Obsidian Vault API to return all Markdown files in the vault.
+
+Neuroscience: A neuron is the basic structural and functional unit of the nervous system. Each neuron has a cell body (soma) that processes information, dendrites that receive input, and an axon that sends output. A `.md` file corresponds to a neuron — the content is the soma, `[[wikilinks]]` are axon terminals, and being referenced is dendritic input. Without a `.md` file, there is no neuron — only empty connection structures.
+
+**Void Synapse Types**
+
+The count of unique link target names referenced by `[[wikilink]]` that have no corresponding `.md` file in the vault. These connection types have names, are referenced by multiple neurons, but have no cell body at the receiving end. Analogous to fields in SAP: a table has multiple fields (e.g., amount, date, category), multiple tables use the same field name, but not every field has a corresponding master data table — an amount field has a name, semantics, and is referenced by many tables, but it is not itself an independent table. When you create a master data table for that field, the void synapse type gains a dedicated neuron, transitioning from "void" to "solid."
+
+Data logic: Iterate through `metadataCache.unresolvedLinks`, collect all unresolved target names into a Set for deduplication, `Set.size` is the void synapse type count.
+
+Neuroscience: Synapses have different type classifications — glutamatergic, GABAergic, dopaminergic — each defined by what it connects to. A void synapse type is one where the connection structure exists, the type is determined (has a name, referenced by multiple neurons), but no postsynaptic neuron cell body has formed. Like during brain development, when axons have reached the target area and release neurotransmitters, but the receiving neurons have not yet differentiated.
+
+**Synaptic Links**
+
+The total count of all `[[wikilink]]` occurrences, including those pointing to existing files (resolved, i.e., solid synapse types) and those pointing to non-existent files (unresolved, i.e., void synapse types). Each `[[ ]]` is a real connection wire. 33,000 neurons are connected by approximately 650,000 synaptic links, of which approximately 220,000 point to void synapse types (deduplicated to 18,000 void synapse types).
+
+Data logic: Sum all count values in `metadataCache.resolvedLinks` and `metadataCache.unresolvedLinks`. The combined sum equals total `[[wikilink]]` occurrences.
+
+Neuroscience: A synapse is a functional connection between two neurons. Each `[[wikilink]]` corresponds to one synaptic connection — one axon terminal reaching toward a target. Whether or not the target neuron exists, the connection itself is a real physical structure. 650,000 synaptic links represent the total connection density of the neural network. A neuron typically has 1,000 to 10,000 synapses; 33,000 neurons × ~20 links each = ~650,000 links (including connections to void synapse types), placing this at the lower end of neural network connection density.
+
+**Words**
+
+The total effective word count across all `.md` files. Markdown syntax is cleaned first (frontmatter, code blocks, inline code, embeds, formula blocks, HTML tags, format characters), then CJK character count + English word count is tallied. 23.72 million words represent the total cognitive corpus of the Digent brain.
+
+Data logic: Batch-read all files (100 concurrent per batch), clean each file and count words. Failed file reads are skipped; if total time exceeds 30 seconds, remaining files are estimated from the average of processed files.
+
+Neuroscience: Word count corresponds to a neuron's "information capacity" — just as a neuron's effectiveness depends on neurotransmitter reserves and receptor density, the information a neuron carries depends on its content richness. 23.72 million words represent the total cognitive corpus of the Digent brain — the material basis for memory storage and cognitive processing.
 
 ### Noda VR Export
 
