@@ -145,8 +145,8 @@ export const EN = {
 	'hud.layouting': 'layout…',
 	'hud.notes': '{n} notes',
 	'stat.notes': 'Neurons',
-	'stat.synapses': 'Synapses',
-	'stat.links': 'Links',
+	'stat.synapses': 'Void Synapse Types',
+	'stat.links': 'Synaptic Links',
 	'stat.words': 'Words',
 	// —— help lines ——
 	'help.orbit': 'Left-drag = orbit · scroll = zoom',
