@@ -66,6 +66,8 @@ Digent View 用力导向算法模拟神经元之间的吸引与排斥，让你�
 
 在 VR 中，你不再是从外面看一座图谱，而是站在自己的Digent数智体的大脑内部，四周是你的神经元网络。
 
+![Noda VR — 走进数智体的大脑](assets/noda-vr-screenshot.jpg)
+
 ## 安装
 
 ### 手动安装
