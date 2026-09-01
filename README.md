@@ -66,6 +66,8 @@ What gets exported:
 
 In VR, you're no longer looking at a graph from the outside. You're standing inside the brain of your Digent — surrounded by your own neural network.
 
+![Noda VR — step inside your Digent's brain](assets/noda-vr-screenshot.jpg)
+
 ## Installation
 
 ### Manual Install
