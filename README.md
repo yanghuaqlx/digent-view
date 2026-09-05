@@ -91,23 +91,23 @@ Neuroscience: Word count corresponds to a neuron's "information capacity" — ju
 
 ### Digent DNA Export
 
-One click exports the complete link structure of your vault as a DNA CSV file — a frozen snapshot of your Digent's neural architecture.
+One click exports the complete link structure of your Digent as a DNA CSV file — a frozen snapshot of your Digent's neural architecture.
 
-**No two vaults are alike.** Just as no two brains share the same connectome, the link structure of every Obsidian vault is unique. The Digent DNA file captures that structure: every neuron, every void synapse type, every synaptic link, and their exact positions in 3D space.
+**No two Digents are alike.** Just as no two brains share the same connectome, the link structure of every Digent is unique. The Digent DNA file captures that structure: every neuron, every void synapse type, every synaptic link, and their exact positions in 3D space.
 
 The DNA file contains 7 columns:
 
 | Column | Contents |
 |--------|----------|
 | Node | The title/name of the node (empty for link rows) |
-| Type | `Neuron` (has an `.md` file) / `Void Synapse Type` (referenced but no file) / `Synaptic Link` (a connection between two nodes) |
-| DNA-X / DNA-Y / DNA-Z | 3D coordinates of the node in space (same coordinate system as Noda export) |
+| Type | Neuron (has an `.md` file) / Void Synapse Type (referenced but no file) / Synaptic Link (a connection between two nodes) |
+| DNA-X / DNA-Y / DNA-Z | 3D coordinates of the node in space |
 | Source | Source node of a synaptic link (only on link rows) |
 | Target | Target node of a synaptic link (only on link rows) |
 
 Filename: `{vaultName}_DNA_{timestamp}.csv`
 
-> The DNA file preserves the topology of your knowledge network — the structural identity of your Digent. Import it elsewhere, compare across time, or use it as a fingerprint of how your mind is wired.
+> The DNA file preserves the topology of your Digent network — the structural identity of your Digent. Import it elsewhere, compare across time, or use it as a fingerprint of how your mind is wired.
 
 **Note on link count**: The stats panel shows total `[[wikilink]]` occurrences (including repeated references between the same pair of notes). The DNA export deduplicates links — each node pair appears only once (A→B is one line, not N lines). This is why the number of "Synaptic Links" in the DNA file is lower than the number in the stats panel — one is total wiring density, the other is unique structural connections.
 
