@@ -89,6 +89,28 @@ Data logic: Batch-read all files (100 concurrent per batch), clean each file and
 
 Neuroscience: Word count corresponds to a neuron's "information capacity" — just as a neuron's effectiveness depends on neurotransmitter reserves and receptor density, the information a neuron carries depends on its content richness. 23.72 million words represent the total cognitive corpus of the Digent brain — the material basis for memory storage and cognitive processing.
 
+### Digent DNA Export
+
+One click exports the complete link structure of your vault as a DNA CSV file — a frozen snapshot of your Digent's neural architecture.
+
+**No two vaults are alike.** Just as no two brains share the same connectome, the link structure of every Obsidian vault is unique. The Digent DNA file captures that structure: every neuron, every void synapse type, every synaptic link, and their exact positions in 3D space.
+
+The DNA file contains 7 columns:
+
+| Column | Contents |
+|--------|----------|
+| Node | The title/name of the node (empty for link rows) |
+| Type | `Neuron` (has an `.md` file) / `Void Synapse Type` (referenced but no file) / `Synaptic Link` (a connection between two nodes) |
+| DNA-X / DNA-Y / DNA-Z | 3D coordinates of the node in space (same coordinate system as Noda export) |
+| Source | Source node of a synaptic link (only on link rows) |
+| Target | Target node of a synaptic link (only on link rows) |
+
+Filename: `{vaultName}_DNA_{timestamp}.csv`
+
+> The DNA file preserves the topology of your knowledge network — the structural identity of your Digent. Import it elsewhere, compare across time, or use it as a fingerprint of how your mind is wired.
+
+**Note on link count**: The stats panel shows total `[[wikilink]]` occurrences (including repeated references between the same pair of notes). The DNA export deduplicates links — each node pair appears only once (A→B is one line, not N lines). This is why the number of "Synaptic Links" in the DNA file is lower than the number in the stats panel — one is total wiring density, the other is unique structural connections.
+
 ### Noda VR Export
 
 One click exports the 3D graph as CSV, ready to import into [Noda](https://noda.io) (Quest 3 VR). **Step inside your own Digent — the brain of a digital intelligence.**
