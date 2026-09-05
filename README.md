@@ -111,6 +111,8 @@ Filename: `{vaultName}_DNA_{timestamp}.csv`
 
 **Note on link count**: The stats panel shows total `[[wikilink]]` occurrences (including repeated references between the same pair of notes). The DNA export deduplicates links — each node pair appears only once (A→B is one line, not N lines). This is why the number of "Synaptic Links" in the DNA file is lower than the number in the stats panel — one is total wiring density, the other is unique structural connections.
 
+![Digent DNA — the structural identity of your Digent](assets/digent-dna.png)
+
 ### Noda VR Export
 
 One click exports the 3D graph as CSV, ready to import into [Noda](https://noda.io) (Quest 3 VR). **Step inside your own Digent — the brain of a digital intelligence.**
