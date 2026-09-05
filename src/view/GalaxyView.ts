@@ -23,7 +23,7 @@ export class GalaxyView extends ItemView {
 	}
 
 	getIcon(): string {
-		return 'orbit';
+		return 'brain';
 	}
 
 	get counts(): { nodes: number; links: number } {
