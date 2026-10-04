@@ -5,7 +5,7 @@
 > Every MD file is a neuron. Every `[[wikilink]]` is a connection between neurons. Digent View renders this brain in three dimensions — so you can see the shape of your own Digent.
 
 ![Digent View — overview of a 3D neural network](assets/screenshot-overview.png)
-![Digent View — overview of a 3D neural network](assets/QQ20261005-074432-HD.mp4)
+![演示动图](assets/demo.gif)
 [中文版本](README.zh.md)
 
 ---
