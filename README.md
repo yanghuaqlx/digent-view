@@ -80,6 +80,8 @@ Data logic: Sum all count values in `metadataCache.resolvedLinks` and `metadataC
 
 Neuroscience: A synapse is a functional connection between two neurons. Each `[[wikilink]]` corresponds to one synaptic connection — one axon terminal reaching toward a target. Whether or not the target neuron exists, the connection itself is a real physical structure. 650,000 synaptic links represent the total connection density of the neural network. A neuron typically has 1,000 to 10,000 synapses; 33,000 neurons × ~20 links each = ~650,000 links (including connections to void synapse types), placing this at the lower end of neural network connection density.
 
+Repeated Links (Memory Strength): From the perspective of neural networks, the more repeated `[[wikilink]]` connections exist between the same neurons, the stronger and more robust the memory becomes. However, Obsidian links cannot visually reflect how solid a memory is, so the display of memory‑strength metrics has been omitted in presentation.
+
 **Words**
 
 The total effective word count across all `.md` files. Markdown syntax is cleaned first (frontmatter, code blocks, inline code, embeds, formula blocks, HTML tags, format characters), then CJK character count + English word count is tallied. 23.72 million words represent the total cognitive corpus of the Digent brain.
